@@ -1,6 +1,9 @@
-# BanfCV
-## This is a one-page site with a beautiful and modern design in front of your eyes
-#
-### Dark Theme
-<img src="https://raw.githubusercontent.com/matinnasiridev/BanfCV/master/demo/dark%20demo.jpg">
+# The first page of Google
+## Search Google and identify similarities :)
+- Everything in one file
+- With neumorphism effect.
+- And CSS animations.
+Designed with 💜 in Iran   [Matin Nasiri](https://www.instagram.com/matin.m.nasiri)
 
+
+![preview img](/perView.jpg)
