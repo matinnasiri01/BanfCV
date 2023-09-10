@@ -9,11 +9,13 @@
   <a href="www.linkedin.com/in/matin-nasiri-5a4405200"><img src="https://img.shields.io/badge/linkedin-0c67c2?style=for-the-badge&logo=linkedin"/></a>
 </p>
 
-# BanfCV v1.0.0
+# BanfCV v2.0.0
 
 - Responsive
   
 - Custom coloring
+
+- Use Nodejs (experessjs)
   
 - Night mode and day mode
   
