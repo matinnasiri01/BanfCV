@@ -29,8 +29,13 @@ yarn-error.log
 .pnp/
 .pnp.js
 
-# dotenv environment variables file
+# Ignore development environment files
 .env
+.env.local
+.env.development
+.env.test
+.env.production
+
 
 # vscode
 .vscode/
