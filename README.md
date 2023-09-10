@@ -27,8 +27,7 @@
 
 ---
 <br>
-
-![preview img](/demo/perView.jpg)
+<!-- ![preview img](/demo/perView.jpg) -->
 
 <br>
 <br>
