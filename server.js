@@ -4,7 +4,7 @@ const app = express()
 
 app.use(express.static("public"))
 app.set('view engine', 'ejs')
-app.use('/', require('./src/routes/routes'))
+app.use('/', require('./routes/routes'))
 
 
-app.listen(3003,()=> console.log("Server On 3003 Is Running..."))
+app.listen(3003, () =>console.log("Server On 3003 Is Running..."))
