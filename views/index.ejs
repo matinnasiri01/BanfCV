@@ -74,136 +74,37 @@
     <section class="skills section" id="skills">
         <span class="section__subtitle">My abilities</span>
         <h2 class="section__title">My Experience</h2>
-
         <div class="skills__container container grid">
-            <div class="skills__content">
-                <h3 class="skills__title">Android Developer</h3>
-
+            <%skillsData.forEach(skill => {%>
+                <div class="skills__content">
+                <h3 class="skills__title"><%= skill.titel%></h3>
                 <div class="skills__box">
                     <div class="skills__group">
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Android</h3>
-                                <span class="skills__level">Basic
-                                </span>
+                        <%for(let i = 0; i < skill.skills.length / 2; i++){%>
+                            <div class="skills__data">
+                                <i class="bx bxs-badge-check"></i>
+                                <div>
+                                    <h3 class="skills__name"><%= skill.skills[i].sk_titel %></h3>
+                                    <span class="skills__level"><%= skill.skills[i].sk_level %></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Java</h3>
-                                <span class="skills__level">Advanced
-                                </span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Kotlin</h3>
-                                <span class="skills__level">Intermediate
-                                </span>
-                            </div>
-                        </div>
+                            <%}%>
                     </div>
                     <div class="skills__group">
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Git</h3>
-                                <span class="skills__level">Intermediate
-                                </span>
+                        <%for(let i = skill.skills.length / 2; i < skill.skills.length; i++){%>
+                            <div class="skills__data">
+                                <i class="bx bxs-badge-check"></i>
+                                <div>
+                                    <h3 class="skills__name"><%= skill.skills[i].sk_titel %></h3>
+                                    <span class="skills__level"><%= skill.skills[i].sk_level %></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Mvvm</h3>
-                                <span class="skills__level">Intermediate
-                                </span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Jvm</h3>
-                                <span class="skills__level">Basic
-                                </span>
-                            </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="skills__content">
-                <h3 class="skills__title">Backend Developer</h3>
-
-                <div class="skills__box">
-                    <div class="skills__group">
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">My SqL</h3>
-                                <span class="skills__level">Basic
-                                </span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Python</h3>
-                                <span class="skills__level">Advanced
-                                </span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">FireBace</h3>
-                                <span class="skills__level">Intermediate
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills__group">
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Kardan</h3>
-                                <span class="skills__level">Defult
-                                </span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Khordan</h3>
-                                <span class="skills__level">Intermediate
-                                </span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-badge-check"></i>
-
-                            <div>
-                                <h3 class="skills__name">Sleeping</h3>
-                                <span class="skills__level">God mode
-                                </span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            <%})%>
         </div>
     
         <!-- ============>SERVICES<============ -->
@@ -212,8 +113,9 @@
         <h2 class="section__title">What I Offer</h2>
 
         <div class="services__container container grid">
+           <% offers.forEach(offer =>{ %>
             <div class="services__card">
-                <h3 class="services__title">Product <br> Designer</h3>
+                <h3 class="services__title"><%= offer.offerTitel%></h3>
 
                 <span class="services__button">
                     See more <i class="bx bx-right-arrow-alt services__icon"></i>
@@ -223,165 +125,22 @@
                     <div class="services__modal-content">
                         <i class="bx bx-x services__modal-close"></i>
 
-                        <h3 class="services__modal-title">Product Designer</h3>
-                        <p class="services__modal-description">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, placeat corrupti
-                            assumenda evenietcia eum obcaecati, vitae saepe.
-                        </p>
+                        <h3 class="services__modal-title"><%= offer.offerTitel%></h3>
+                        <p class="services__modal-description"><%= offer.offerDes%></p>
                         <ul class="services__modal-list">
+        
+                            <% offer.offerPoints.forEach(pointOBJ=>{%>
                             <li class="services__modal-item">
                                 <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I develop the user interface.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    Web page development
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I create ux element interaction.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I position your company brand.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    Designe and mockups of products for companies
-                                </p>
-                            </li>
+                                <p class="services__modal-info"><%= pointOBJ.point%></p>
+                            <%})%>
+                            
                         </ul>
                     </div>
                 </div>
 
             </div>
-
-            <div class="services__card">
-                <h3 class="services__title">Ui/Ux <br> Designer</h3>
-
-                <span class="services__button">
-                    See more <i class="bx bx-right-arrow-alt services__icon"></i>
-                </span>
-
-                <div class="services__modal">
-                    <div class="services__modal-content">
-                        <i class="bx bx-x services__modal-close"></i>
-
-                        <h3 class="services__modal-title">Product Designer</h3>
-                        <p class="services__modal-description">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, placeat corrupti
-                            assumenda evenietcia eum obcaecati, vitae saepe.
-                        </p>
-                        <ul class="services__modal-list">
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I develop the user interface.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    Web page development
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I create ux element interaction.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I position your company brand.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    Designe and mockups of products for companies
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="services__card">
-                <h3 class="services__title">Visual <br> Designer</h3>
-
-                <span class="services__button">
-                    See more <i class="bx bx-right-arrow-alt services__icon"></i>
-                </span>
-
-                <div class="services__modal">
-                    <div class="services__modal-content">
-                        <i class="bx bx-x services__modal-close"></i>
-
-                        <h3 class="services__modal-title">Product Designer</h3>
-                        <p class="services__modal-description">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, placeat corrupti
-                            assumenda evenietcia eum obcaecati, vitae saepe.
-                        </p>
-                        <ul class="services__modal-list">
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I develop the user interface.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    Web page development
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I create ux element interaction.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    I position your company brand.
-                                </p>
-                            </li>
-
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info">
-                                    Designe and mockups of products for companies
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+           <% })%>
         </div>
         </section>
     </section>
@@ -392,101 +151,45 @@
 
         <div class="work__filters">
             <span class="work__item active-work" data-filter='all'>All</span>
-            <span class="work__item" data-filter='.web'>Web</span>
-            <span class="work__item" data-filter='.movil'>Movil</span>
-            <span class="work__item" data-filter='.design'>Design</span>
+            <% filtersWorks.forEach(eachOne=>{%>
+                <span class="work__item" data-filter='.<%= eachOne.toLowerCase().replace(/\s+/g, '') %>'><%= eachOne%></span>
+            <% })  %>
         </div>
 
         <div class="work__container container grid">
-
-            <div class="work__card mix web">
-                <img src="/img/main.png" alt="WIMG" class="work__img">
-
-                <h3 class="work__title">Web design</h3>
-
-                <a href="#" class="work__button">
-                    Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-                </a>
-            </div>
-
-            <div class="work__card mix movil">
-                <img src="/img/main.png" alt="WIMG" class="work__img">
-
-                <h3 class="work__title">App movil</h3>
-
-                <a href="#" class="work__button">
-                    Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-                </a>
-            </div>
-
-            <div class="work__card mix design">
-                <img src="/img/main.png" alt="WIMG" class="work__img">
-
-                <h3 class="work__title">Brand design</h3>
-
-                <a href="#" class="work__button">
-                    Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-                </a>
-            </div>
-
-            <div class="work__card mix web">
-                <img src="/img/main.png" alt="WIMG" class="work__img">
-
-                <h3 class="work__title">Web design</h3>
-
-                <a href="#" class="work__button">
-                    Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-                </a>
-            </div>
-
-            <div class="work__card mix movil">
-                <img src="/img/main.png" alt="WIMG" class="work__img">
-
-                <h3 class="work__title">App movil</h3>
-
-                <a href="#" class="work__button">
-                    Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-                </a>
-            </div>
+            <% recentWorks.forEach(singleWork =>{ %>
+                <div class="work__card mix <%= singleWork.category.toLowerCase().replace(/\s+/g, '') %>">
+                    <img src="/img/<%= singleWork.imageName%>" alt="WIMG" class="work__img">
+                    <h3 class="work__title"><%= singleWork.name%></h3>
+                    <a href="<%= singleWork.repoURL %>" class="work__button">
+                        Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+                    </a>
+                </div>
+            <% }) %>
         </div>
         <!-- ============>TESTIMONIALS<============ -->
-        <section class="testimonial section">
-        <span class="section__subtitle">My clients say</span>
-        <h2 class="section__title">Testimonial</h2>
+        <% if (Object.keys(testimonial).length !== 0) { %>
+            
+            <section class="testimonial section">
+               <span class="section__subtitle">My clients say</span>
+               <h2 class="section__title">Testimonial</h2>
+               <div class="testimonal__container container swiper">
+                   <div class="swiper-wrapper">
+                       <% testimonial.forEach(eachSay =>{ %>
 
-        <div class="testimonal__container container swiper">
-            <div class="swiper-wrapper">
-                <div class="testimonal__card swiper-slide">
-                    <img src="/img/main.png" alt="" class="testimonal__img">
+                           <div class="testimonal__card swiper-slide">
+                           <img src="/img/<%= eachSay.imageName %>" alt="" class="testimonal__img">
+    
+                           <h3 class="testimonal__name"><%= eachSay.name%></h3>
+                           <p class="testimonal__description"><%= eachSay.des %></p>
+                           </div>
 
-                    <h3 class="testimonal__name">Jhon Doe</h3>
-                    <p class="testimonal__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nostrum explicabo eaque
-                        tempora vero dignissimos.
-                    </p>
-                </div>
-                <div class="testimonal__card swiper-slide">
-                    <img src="/img/main.png" alt="" class="testimonal__img">
-
-                    <h3 class="testimonal__name">Paula Vusy</h3>
-                    <p class="testimonal__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nostrum explicabo eaque
-                        tempora vero dignissimos.
-                    </p>
-                </div>
-                <div class="testimonal__card swiper-slide">
-                    <img src="/img/main.png" alt="" class="testimonal__img">
-
-                    <h3 class="testimonal__name">Sara Cill</h3>
-                    <p class="testimonal__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nostrum explicabo eaque
-                        tempora vero dignissimos.
-                    </p>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-        </section>
+                       <% }) %>
+                       <div class="swiper-pagination"></div>
+                   </div>
+               </div>
+               </section>
+            <% } %>
     </section>
     <!-- ============>CONTACT<============ -->
     <section class="contact section" id="contact">
@@ -510,11 +213,11 @@
                 </div>
                 <div class="contact__info">
                     <div class="contact__card">
-                        <i class="bx bxl-whatsapp contact__card-icon"></i>
-                        <h3 class="contact__card-title">Whatsapp</h3>
-                        <span class="contact__card-data"><%= number%></span>
+                        <i class="bx bxl-skype contact__card-icon"></i>
+                        <h3 class="contact__card-title">Skype</h3>
+                        <span class="contact__card-data"><%= locals.skype || "Opss!"%></span>
 
-                        <a href="https://api.whatsapp.com/send?phone=<%= number%>&textHellow, more information!"
+                        <a href="<%= locals.skype || "Opss!"%>"
                             target="_blank" class="contact__button">Write me
                             <i class="bx bx-right-arrow-alt contact__button-icon"></i>
                         </a>
