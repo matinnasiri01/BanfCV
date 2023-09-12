@@ -1,10 +1,12 @@
 const express = require('express')
 require('dotenv').config()
+const port = process.env.PORT || 3000
 const app = express()
 
+app.use(express.json())
 app.use(express.static("public"))
 app.set('view engine', 'ejs')
 app.use('/', require('./routes/routes'))
 
 
-app.listen(3003, () =>console.log("Server On 3003 Is Running..."))
+app.listen(port, () => console.log(`Server On ${port} Is Running...`))
