@@ -1,266 +1,309 @@
 <%- include('partials/header'); -%>
-  <!-- ============>MAIN<============ -->
-  <main class="main">
-    <!-- ============>HOME<============ -->
-    <section class="home section" id="home">
-        <div class="home__container container grid">
-            <div class="home__data">
-                <span class="home__greeting">Hello, I'm</span>
-                <h1 class="home__name">Matin Nasiri</h1>
-                <h3 class="home__education">Android Developer</h3>
+    <!-- ============>MAIN<============ -->
+    <main class="main">
+        <!-- ============>HOME<============ -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <span class="home__greeting">Hello, I'm</span>
+                    <h1 class="home__name">Matin Nasiri</h1>
+                    <h3 class="home__education">Android Developer</h3>
 
-                <div class="home__buttons">
-                    <a href="/downloadResume"
-                        class="button button--ghost">Dowenload CV</a>
-                    <a href="#about" class="button">About Me</a>
-                </div>
-            </div>
-
-            <div class="home__handle">
-                <img src="/img/main.png" alt="Index Img" class="home__img">
-            </div>
-
-            <div class="home__social">
-                <a href="<%= linkedin%>/" target="_blank" class="home__social-link">
-                    <i class="bx bxl-linkedin-square"></i>
-                </a>
-                <a href="<%= github%>" target="_blank" class="home__social-link">
-                    <i class="bx bxl-github"></i>
-                </a>
-                <a href="<%= instagram%>" target="_blank" class="home__social-link">
-                    <i class='bx bxl-instagram'></i> </a>
-            </div>
-
-            <a href="#about" class="home__scroll">
-                <i class='bx bx-mouse home__scroll-icon'></i>
-                <span class="home__scroll-name">Scroll Down</span>
-            </a>
-        </div>
-    </section>
-    <!-- ============>ABOUT<============ -->
-    <section class="about section" id="about">
-        <span class="section__subtitle">My Intro</span>
-        <h2 class="section__title">About Me</h2>
-
-        <div class="about__container container grid">
-            <img src="/img/main.png" alt="About Img" class="about__img">
-
-            <div class="about__data">
-                <div class="about__info">
-                    <div class="about__box">
-                        <i class="bx bx-award about__icon"></i>
-                        <h3 class="about__title">Experoence</h3>
-                        <span class="about__subtitle"><%=new Date().getFullYear() - 2021%> Years Wrorking</span>
-                    </div>
-                    <div class="about__box">
-                        <i class="bx bx-briefcase-alt about__icon"></i>
-                        <h3 class="about__title">Completed</h3>
-                        <span class="about__subtitle"><%= projects%>+ Projects</span>
-                    </div>
-                    <div class="about__box">
-                        <i class="bx bx-support about__icon"></i>
-                        <h3 class="about__title">Support</h3>
-                        <span class="about__subtitle">Online 16/6</span>
+                    <div class="home__buttons">
+                        <a href="/downloadResume" class="button button--ghost">Dowenload CV</a>
+                        <a href="#about" class="button">About Me</a>
                     </div>
                 </div>
 
-                <p class="about__description"><%= aboutDes%></p>
+                <div class="home__handle">
+                    <img src="/img/main.png" alt="Index Img" class="home__img">
+                </div>
 
-                <a href="#contact" class="button">Contact Me</a>
+                <div class="home__social">
+                    <a href="<%= linkedin %>/" target="_blank" class="home__social-link">
+                        <i class="bx bxl-linkedin-square"></i>
+                    </a>
+                    <a href="<%= github%>" target="_blank" class="home__social-link">
+                        <i class="bx bxl-github"></i>
+                    </a>
+                    <a href="<%= instagram%>" target="_blank" class="home__social-link">
+                        <i class='bx bxl-instagram'></i> </a>
+                </div>
+
+                <a href="#about" class="home__scroll">
+                    <i class='bx bx-mouse home__scroll-icon'></i>
+                    <span class="home__scroll-name">Scroll Down</span>
+                </a>
             </div>
-        </div>
-    </section>
-    <!-- ============>Skills<============ -->
-    <section class="skills section" id="skills">
-        <span class="section__subtitle">My abilities</span>
-        <h2 class="section__title">My Experience</h2>
-        <div class="skills__container container grid">
-            <%skillsData.forEach(skill => {%>
-                <div class="skills__content">
-                <h3 class="skills__title"><%= skill.titel%></h3>
-                <div class="skills__box">
-                    <div class="skills__group">
-                        <%for(let i = 0; i < skill.skills.length / 2; i++){%>
-                            <div class="skills__data">
-                                <i class="bx bxs-badge-check"></i>
-                                <div>
-                                    <h3 class="skills__name"><%= skill.skills[i].sk_titel %></h3>
-                                    <span class="skills__level"><%= skill.skills[i].sk_level %></span>
-                                </div>
-                            </div>
-                            <%}%>
+        </section>
+        <!-- ============>ABOUT<============ -->
+        <section class="about section" id="about">
+            <span class="section__subtitle">My Intro</span>
+            <h2 class="section__title">About Me</h2>
+
+            <div class="about__container container grid">
+                <img src="/img/main.png" alt="About Img" class="about__img">
+
+                <div class="about__data">
+                    <div class="about__info">
+                        <div class="about__box">
+                            <i class="bx bx-award about__icon"></i>
+                            <h3 class="about__title">Experoence</h3>
+                            <span class="about__subtitle">
+                                <%=new Date().getFullYear() - 2021%> Years Wrorking
+                            </span>
+                        </div>
+                        <div class="about__box">
+                            <i class="bx bx-briefcase-alt about__icon"></i>
+                            <h3 class="about__title">Completed</h3>
+                            <span class="about__subtitle">
+                                <%= projects%>+ Projects
+                            </span>
+                        </div>
+                        <div class="about__box">
+                            <i class="bx bx-support about__icon"></i>
+                            <h3 class="about__title">Support</h3>
+                            <span class="about__subtitle">Online 16/6</span>
+                        </div>
                     </div>
-                    <div class="skills__group">
-                        <%for(let i = skill.skills.length / 2; i < skill.skills.length; i++){%>
-                            <div class="skills__data">
-                                <i class="bx bxs-badge-check"></i>
-                                <div>
-                                    <h3 class="skills__name"><%= skill.skills[i].sk_titel %></h3>
-                                    <span class="skills__level"><%= skill.skills[i].sk_level %></span>
-                                </div>
+
+                    <p class="about__description">
+                        <%= aboutDes%>
+                    </p>
+
+                    <a href="#contact" class="button">Contact Me</a>
+                </div>
+            </div>
+        </section>
+        <!-- ============>Skills<============ -->
+        <section class="skills section" id="skills">
+            <span class="section__subtitle">My abilities</span>
+            <h2 class="section__title">My Experience</h2>
+            <div class="skills__container container grid">
+                <%skillsData.forEach(skill=> {%>
+                    <div class="skills__content">
+                        <h3 class="skills__title">
+                            <%= skill.titel%>
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <%for(let i=0; i < skill.skills.length / 2; i++){%>
+                                    <div class="skills__data">
+                                        <i class="bx bxs-badge-check"></i>
+                                        <div>
+                                            <h3 class="skills__name">
+                                                <%= skill.skills[i].sk_titel %>
+                                            </h3>
+                                            <span class="skills__level">
+                                                <%= skill.skills[i].sk_level %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <%}%>
                             </div>
-                            <%}%>
+                            <div class="skills__group">
+                                <%for(let i=skill.skills.length / 2; i < skill.skills.length; i++){%>
+                                    <div class="skills__data">
+                                        <i class="bx bxs-badge-check"></i>
+                                        <div>
+                                            <h3 class="skills__name">
+                                                <%= skill.skills[i].sk_titel %>
+                                            </h3>
+                                            <span class="skills__level">
+                                                <%= skill.skills[i].sk_level %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <%})%>
+                </div>
+
+                <!-- ============>SERVICES<============ -->
+                <section class="services section">
+                    <span class="section__subtitle">My Services</span>
+                    <h2 class="section__title">What I Offer</h2>
+
+                    <div class="services__container container grid">
+                        <% offers.forEach(offer=>{ %>
+                            <div class="services__card">
+                                <h3 class="services__title">
+                                    <%= offer.offerTitel%>
+                                </h3>
+
+                                <span class="services__button">
+                                    See more <i class="bx bx-right-arrow-alt services__icon"></i>
+                                </span>
+
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <i class="bx bx-x services__modal-close"></i>
+
+                                        <h3 class="services__modal-title">
+                                            <%= offer.offerTitel%>
+                                        </h3>
+                                        <p class="services__modal-description">
+                                            <%= offer.offerDes%>
+                                        </p>
+                                        <ul class="services__modal-list">
+
+                                            <% offer.offerPoints.forEach(pointOBJ=>{%>
+                                                <li class="services__modal-item">
+                                                    <i class="bx bx-check services__modal-icon"></i>
+                                                    <p class="services__modal-info">
+                                                        <%= pointOBJ.point%>
+                                                    </p>
+                                                    <%})%>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% })%>
+                    </div>
+                </section>
+        </section>
+        <!-- ============>WORK<============ -->
+        <section class="work section" id="work">
+            <span class="section__subtitle">My Portfolio</span>
+            <h2 class="section__title">Recent Works</h2>
+
+            <div class="work__filters">
+                <span class="work__item active-work" data-filter='all'>All</span>
+                <% function removeDuplicates(arr) { return arr.filter((value, index, self)=> {
+                    return self.indexOf(value) === index
+                    })
+                    }
+                    const catData = []
+                    recentWorks.forEach(singleWork =>{
+                    catData.push(singleWork.category)
+
+                    }) %>
+                    <% removeDuplicates(catData.sort()).forEach(eachOne=>{%>
+                        <span class="work__item" data-filter='.<%= eachOne.toLowerCase().replace(/\s+/g, '') %>'>
+                            <%= eachOne%>
+                        </span>
+                        <% }) %>
+            </div>
+
+            <div class="work__container container grid">
+                <% recentWorks.forEach(singleWork=>{ %>
+                    <div class="work__card mix <%= singleWork.category.toLowerCase().replace(/\s+/g, '') %>">
+                        <img src="/img/<%= singleWork.imageName%>" alt="WIMG" class="work__img">
+                        <h3 class="work__title">
+                            <%= singleWork.name%>
+                        </h3>
+                        <a href="<%= singleWork.repoURL %>" class="work__button">
+                            Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+                        </a>
+                    </div>
+                    <% }) %>
+            </div>
+            <!-- ============>TESTIMONIALS<============ -->
+            <% if (Object.keys(testimonial).length !==0) { %>
+
+                <section class="testimonial section">
+                    <span class="section__subtitle">My clients say</span>
+                    <h2 class="section__title">Testimonial</h2>
+                    <div class="testimonal__container container swiper">
+                        <div class="swiper-wrapper">
+                            <% testimonial.forEach(eachSay=>{ %>
+
+                                <div class="testimonal__card swiper-slide">
+                                    <img src="/img/<%= eachSay.imageName %>" alt="" class="testimonal__img">
+
+                                    <h3 class="testimonal__name">
+                                        <%= eachSay.name%>
+                                    </h3>
+                                    <p class="testimonal__description">
+                                        <%= eachSay.des %>
+                                    </p>
+                                </div>
+
+                                <% }) %>
+                                    <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <% } %>
+        </section>
+        <!-- ============>CONTACT<============ -->
+        <section class="contact section" id="contact">
+            <span class="section__subtitle">Get in touck</span>
+            <h2 class="section__title">Contact Me</h2>
+
+            <div class="contact__container container grid">
+                <div class="contact__content">
+                    <h3 class="contact__title">Talk to me</h3>
+
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class="bx bx-mail-send contact__card-icon"></i>
+                            <h3 class="contact__card-title">Email</h3>
+                            <span class="contact__card-data">
+                                <%= email%>
+                            </span>
+
+                            <a href="mailto:<%= email%>" target="_blank" class="contact__button">Write me
+                                <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class="bx bxl-skype contact__card-icon"></i>
+                            <h3 class="contact__card-title">Skype</h3>
+                            <span class="contact__card-data">
+                                <%= locals.skype || "Opss!" %>
+                            </span>
+
+                            <a href="<%= locals.skype || " Opss!"%>"
+                                target="_blank" class="contact__button">Write me
+                                <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class="bx bxl-instagram contact__card-icon"></i>
+                            <h3 class="contact__card-title">Instageram</h3>
+                            <span class="contact__card-data">@<%= instagram.split("/").pop()%></span>
+                            <a href="<%= instagram%>" target="_blank" class="contact__button">Write me
+                                <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <div class="contact__content">
+                    <h3 class="contact__title">Write me your project</h3>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Names</label>
+                            <input type="text" placeholder="Insert your name" class="contact__form-input">
+                        </div>
+
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Mail</label>
+                            <input type="email" placeholder="Insert your email" class="contact__form-input">
+                        </div>
+
+                        <div class="contact__form-div contact__form-area">
+                            <label for="" class="contact__form-tag">Project</label>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your project"
+                                class="contact__form-input"></textarea>
+                        </div>
+
+                        <button class="button">Send Message</button>
+                    </form>
                 </div>
-            <%})%>
-        </div>
-    
-        <!-- ============>SERVICES<============ -->
-        <section class="services section">
-        <span class="section__subtitle">My Services</span>
-        <h2 class="section__title">What I Offer</h2>
-
-        <div class="services__container container grid">
-           <% offers.forEach(offer =>{ %>
-            <div class="services__card">
-                <h3 class="services__title"><%= offer.offerTitel%></h3>
-
-                <span class="services__button">
-                    See more <i class="bx bx-right-arrow-alt services__icon"></i>
-                </span>
-
-                <div class="services__modal">
-                    <div class="services__modal-content">
-                        <i class="bx bx-x services__modal-close"></i>
-
-                        <h3 class="services__modal-title"><%= offer.offerTitel%></h3>
-                        <p class="services__modal-description"><%= offer.offerDes%></p>
-                        <ul class="services__modal-list">
-        
-                            <% offer.offerPoints.forEach(pointOBJ=>{%>
-                            <li class="services__modal-item">
-                                <i class="bx bx-check services__modal-icon"></i>
-                                <p class="services__modal-info"><%= pointOBJ.point%></p>
-                            <%})%>
-                            
-                        </ul>
-                    </div>
-                </div>
-
             </div>
-           <% })%>
-        </div>
         </section>
-    </section>
-    <!-- ============>WORK<============ -->    
-    <section class="work section" id="work">
-        <span class="section__subtitle">My Portfolio</span>
-        <h2 class="section__title">Recent Works</h2>
+    </main>
 
-        <div class="work__filters">
-            <span class="work__item active-work" data-filter='all'>All</span>
-            <% filtersWorks.forEach(eachOne=>{%>
-                <span class="work__item" data-filter='.<%= eachOne.toLowerCase().replace(/\s+/g, '') %>'><%= eachOne%></span>
-            <% })  %>
-        </div>
-
-        <div class="work__container container grid">
-            <% recentWorks.forEach(singleWork =>{ %>
-                <div class="work__card mix <%= singleWork.category.toLowerCase().replace(/\s+/g, '') %>">
-                    <img src="/img/<%= singleWork.imageName%>" alt="WIMG" class="work__img">
-                    <h3 class="work__title"><%= singleWork.name%></h3>
-                    <a href="<%= singleWork.repoURL %>" class="work__button">
-                        Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-                    </a>
-                </div>
-            <% }) %>
-        </div>
-        <!-- ============>TESTIMONIALS<============ -->
-        <% if (Object.keys(testimonial).length !== 0) { %>
-            
-            <section class="testimonial section">
-               <span class="section__subtitle">My clients say</span>
-               <h2 class="section__title">Testimonial</h2>
-               <div class="testimonal__container container swiper">
-                   <div class="swiper-wrapper">
-                       <% testimonial.forEach(eachSay =>{ %>
-
-                           <div class="testimonal__card swiper-slide">
-                           <img src="/img/<%= eachSay.imageName %>" alt="" class="testimonal__img">
-    
-                           <h3 class="testimonal__name"><%= eachSay.name%></h3>
-                           <p class="testimonal__description"><%= eachSay.des %></p>
-                           </div>
-
-                       <% }) %>
-                       <div class="swiper-pagination"></div>
-                   </div>
-               </div>
-               </section>
-            <% } %>
-    </section>
-    <!-- ============>CONTACT<============ -->
-    <section class="contact section" id="contact">
-        <span class="section__subtitle">Get in touck</span>
-        <h2 class="section__title">Contact Me</h2>
-
-        <div class="contact__container container grid">
-            <div class="contact__content">
-                <h3 class="contact__title">Talk to me</h3>
-
-                <div class="contact__info">
-                    <div class="contact__card">
-                        <i class="bx bx-mail-send contact__card-icon"></i>
-                        <h3 class="contact__card-title">Email</h3>
-                        <span class="contact__card-data"><%= email%></span>
-
-                        <a href="mailto:<%= email%>" target="_blank" class="contact__button">Write me
-                            <i class="bx bx-right-arrow-alt contact__button-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact__info">
-                    <div class="contact__card">
-                        <i class="bx bxl-skype contact__card-icon"></i>
-                        <h3 class="contact__card-title">Skype</h3>
-                        <span class="contact__card-data"><%= locals.skype || "Opss!"%></span>
-
-                        <a href="<%= locals.skype || "Opss!"%>"
-                            target="_blank" class="contact__button">Write me
-                            <i class="bx bx-right-arrow-alt contact__button-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact__info">
-                    <div class="contact__card">
-                        <i class="bx bxl-instagram contact__card-icon"></i>
-                        <h3 class="contact__card-title">Instageram</h3>
-                        <span class="contact__card-data">@<%= instagram.split("/").pop()%></span>
-                        <a href="<%= instagram%>" target="_blank"
-                            class="contact__button">Write me
-                            <i class="bx bx-right-arrow-alt contact__button-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact__content">
-                <h3 class="contact__title">Write me your project</h3>
-
-                <form action="" class="contact__form">
-                    <div class="contact__form-div">
-                        <label for="" class="contact__form-tag">Names</label>
-                        <input type="text" placeholder="Insert your name" class="contact__form-input">
-                    </div>
-
-                    <div class="contact__form-div">
-                        <label for="" class="contact__form-tag">Mail</label>
-                        <input type="email" placeholder="Insert your email" class="contact__form-input">
-                    </div>
-
-                    <div class="contact__form-div contact__form-area">
-                        <label for="" class="contact__form-tag">Project</label>
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Write your project"
-                            class="contact__form-input"></textarea>
-                    </div>
-
-                    <button class="button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-</main>
-    
     <%- include('partials/footer'); -%>
