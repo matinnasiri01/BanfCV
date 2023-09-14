@@ -7,8 +7,6 @@ const getHoldJson = require("../module/holdJSON");
 const data = require("../data.json");
 // const fetch = require('node-fetch')
 
-
-
 // Main
 routor.get("/", require("../module/checkDATA"), async (req, res) => {
   const getAllRepoFromGITHUB = await githubData.getRepositoryCount();
@@ -30,11 +28,11 @@ routor.get("/setting", (req, res) => {
 });
 
 // Update The Json Data
-routor.post("/json", require("../module/checkTOKEN"), async (req, res) => {
-  if (!res.locals.oky)
+routor.post("/json", async (req, res) => {
+  if (req.body.token !== process.env.TOKEN)
     res.status(403).json({ message: "Your token is invalid!", date: Date() });
-
-  await fs.writeFile("data.json", JSON.stringify(req.body), (err) => {
+  
+  await fs.writeFile("data.json", JSON.stringify(req.body.json.replace(/\\/g, '')), (err) => {
     if (err)
       res.status(500).json({
         message: "An error occurred on the server",
@@ -46,45 +44,19 @@ routor.post("/json", require("../module/checkTOKEN"), async (req, res) => {
   });
 });
 
-
 // Test Upload Image!
 routor.post("/imgs", require("../module/checkTOKEN"), async (req, res) => {
   if (!res.locals.oky)
     res.status(403).json({ message: "Your token is invalid!", date: Date() });
-
-  
-  if (Object.keys(req.body).length == 0)
-    res.json({ message: "Boro Bache Koni!" });
-
-  
-    async function downloadImages() {
-      req.body.forEach(async (element) => {
-        const imagePath = path.join(__dirname, "public", "img", element.name);
-        const response = await fetch(element.url);
-    
-        if (response.ok) {
-          const fileStream = fs.createWriteStream(imagePath);
-          response.body.pipe(fileStream);
-          
-          
-          await new Promise((resolve, reject) => {
-            fileStream.on('finish', resolve);
-            fileStream.on('error', reject);
-          });
-
-          res.json({state:"Done!"})
-        } else {
-          console.error(element.name , response.statusText);
-        }
-      });
-    }
-    
-    downloadImages();
 });
 
+// Save messages And Send
+routor
+  .route("/message")
+  .get((req, res) => res.send("hi"))
+  .post((req,res)=> res.json({oky:"true"}))
 
 // 404
 routor.use((req, res, next) => res.redirect("/"));
-
 
 module.exports = routor;
