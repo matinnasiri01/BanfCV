@@ -1,38 +1,52 @@
-<p align="center">
-  <a href="https://github.com/matinnasiridev">
-    <img height="150" src="https://github.com/matinnasiridev/matinnasiridev/blob/main/main-logo.png"/></a>
-</p>
+![Logo](https://raw.githubusercontent.com/matinnasiri01/matinnasiri01/main/main-logo.png)
 
-<p align="center">
-  <a href="https://t.me/matinnasiridev"><img src="https://img.shields.io/badge/telegram-1da1f2?style=for-the-badge&logo=telegram&logoColor=white&color=27a0df"/></a> 
-  <a href="https://instagram.com/matinnasiridev"><img src="https://img.shields.io/badge/INSTAGRAM-E1306C?style=for-the-badge&logo=instagram&logoColor=white"/></a>
-  <a href="www.linkedin.com/in/matin-nasiri-5a4405200"><img src="https://img.shields.io/badge/linkedin-0c67c2?style=for-the-badge&logo=linkedin"/></a>
-</p>
+# BanfCV
 
-# BanfCV v2.0.0
+BanfCV is a personal website created using Node.js, Express.js, HTML5, CSS, and EJS. It is designed to showcase your resume in a modern and up-to-date format, with features like responsive design, custom coloring, night mode and day mode, resume upload functionality, neumorphism effect, and CSS animations.
 
-- Responsive
+## Features
+
+- **Responsive**: The website is designed to adapt to various screen sizes, ensuring a consistent experience across devices.
   
-- Custom coloring
-
-- Use Nodejs (experessjs)
+- **Custom Coloring**: You can personalize the color scheme of the website to match your preferences or branding.
   
-- Night mode and day mode
+- **Node.js (Express.js)**: Built using Node.js and Express.js for the backend to handle server-side functionalities.
   
-- You can upload your resume
-
-- Modern and up-to-date design
+- **Night Mode and Day Mode**: Users can switch between night mode and day mode to suit their preference for browsing.
   
-- With neumorphism effect.
+- **Resume Upload**: Allows users to upload their resume directly to the website for easy access by visitors.
   
-- And CSS animations.
+- **Modern Design**: Features a modern and up-to-date design aesthetic to impress visitors and showcase your skills.
+  
+- **Neumorphism Effect**: Incorporates neumorphism design elements to add depth and style to the user interface.
+  
+- **CSS Animations**: Utilizes CSS animations to enhance the visual appeal and interactivity of the website.
 
----
-<br>
-<!-- ![preview img](/demo/perView.jpg) -->
+## Preview
+<img src="https://raw.githubusercontent.com/matinnasiri01/BanfCV/v2/perView.jpg"/>
 
-<br>
-<br>
+## Installation
 
-Designed with 💜 in Iran   [Matin Nasiri](https://www.instagram.com/matin.m.nasiri)
+1. Clone the repository:
+```bash
+git clone https://github.com/matinnasiri01/BanfCV.git
+```
+
+2. Install dependencies:
+```npm
+npm install
+```
+
+3. Run the server:
+```npm
+npm start
+```
+
+4. Visit `http://localhost:3000` in your web browser to view the website.
+
+## Usage
+
+- Customize the color scheme and styling in the CSS files according to your preferences.
+
+- Implement additional features or modify existing ones to tailor the website to your specific needs.
 
